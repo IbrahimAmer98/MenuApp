@@ -1,0 +1,28 @@
+﻿@model MenuApp.Models.NamePrinter
+<form asp-action="NamePrinter" method="post">
+    <div class="row">
+        <label asp-for="Name">Enter your Name :</label>
+        <input asp-for="Name" type="text">
+        <span asp-validation-for="@Model.Name" class="text-danger "></span>
+        <button type="submit" class="btn btn-primary ">Go</button>
+    </div>
+    @if (Model.Name != null)
+    {
+
+        <div asp-for="ReverseName">ReverseName : @Model.ReverseName</div>
+
+
+
+        <div> Name with capital letters : @Model.NameCapital</div>
+
+
+
+        <div> Name with small letters : @Model.NameSmall</div>
+
+
+
+        <div> @Model.Valid</div>
+
+
+    }
+</form>

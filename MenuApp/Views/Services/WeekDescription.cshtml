@@ -1,0 +1,16 @@
+﻿@model MenuApp.Models.CountriesSearch
+<form asp-action="WeekDescription" method="post">
+    <div class="row">
+        <label asp-for="Day">Enter Week day :</label>
+        <input asp-for="Day" type="number" required min="1" max="7">
+        <span asp-validation-for="@Model.Day" class="text-danger "></span>
+        <button type="submit" class="btn btn-primary ">Go</button>
+    </div>
+
+    @if (Model.Day.ToString().Length != 0)
+    {
+        <div>@Model.Description</div>
+    }
+
+
+</form>

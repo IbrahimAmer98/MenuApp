@@ -1,0 +1,21 @@
+﻿@model MenuApp.Models.LettersCounter
+<form asp-action="LettersCounter" method="post">
+    <div class="row">
+        <label asp-for="Text">Enter a Text :</label>
+        <input asp-for="Text" type="text">
+        <span asp-validation-for="@Model.Text" class="text-danger "></span>
+        <button type="submit" class="btn btn-primary ">Go</button>
+    </div>
+    @if (Model.Text != null)
+    {
+        <div>The count of each letter in the text: @Model.Text.Length</div>
+
+    }
+    @if (Model.InvalidChar != null)
+    {
+        <div> The Invalid Characters: @Model.InvalidChar</div>
+
+    }
+
+
+</form>

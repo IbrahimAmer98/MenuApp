@@ -1,0 +1,22 @@
+﻿@model MenuApp.Models.SmartCalculator
+<form asp-action="SmartCalculator" method="post">
+    <div class="row">
+        <label asp-for="A">Enter First Number:</label>
+        <input asp-for="A" type="number" step="0.01" required>
+        <span asp-validation-for="@Model.A" class="text-danger "></span>
+        <label asp-for="B">Enter Second Number:</label>
+        <input asp-for="B" type="number" step="0.01" required>
+        <span asp-validation-for="@Model.B" class="text-danger "></span>
+        <button type="submit" class="btn btn-primary ">Go</button>
+    </div>
+    @if (Model.A.ToString().Length != 0 || Model.B.ToString().Length != 0)
+    {
+
+        <div>A divided by B = @(Model.A/Model.B)</div>
+        <div> Square root of A and B sum = @Math.Sqrt(@Model.A + @Model.B)</div>
+        <div> A raised to the power of B = @Math.Pow(@Model.A , @Model.B)</div>
+        <div> A: @Model.A in binary = @Model.AInBinary</div>
+        <div> B: @Model.B in binary = @Model.BInBinary</div>
+
+    }
+</form>
